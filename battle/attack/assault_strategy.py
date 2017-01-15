@@ -13,12 +13,11 @@ General imports
 '''
 from functools import partial
 import heapq
-#from implementation import
 '''
 custom EOC imports
 '''
 from battle import commander
-from attack import implementation_refactoed
+from attack import implementation_refactored
 
 
 
