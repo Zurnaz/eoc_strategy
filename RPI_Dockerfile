@@ -1,0 +1,79 @@
+###
+### DOES NOT WORK, Everything installs but checkio-li cannot successfully download a battle
+###
+
+FROM resin/rpi-raspbian:jessie
+
+MAINTAINER zurnaz
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        curl \
+        wget \
+        bzr \
+        git \
+        mercurial \
+        openssh-client \
+        subversion \
+        procps \
+        autoconf \
+        automake \
+        bzip2 \
+        file \
+        g++ \
+        gcc \
+        imagemagick \
+        libbz2-dev \
+        libc6-dev \
+        libcurl4-openssl-dev \
+        libevent-dev \
+        libffi-dev \
+        libgeoip-dev \
+        libglib2.0-dev \
+        libjpeg-dev \
+        liblzma-dev \
+        libmagickcore-dev \
+        libmagickwand-dev \
+        libmysqlclient-dev \
+        libncurses-dev \
+        libpng-dev \
+        libpq-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        libssl-dev \
+        libtool \
+        libwebp-dev \
+        libxml2-dev \
+        libxslt-dev \
+        libyaml-dev \
+        make \
+        patch \
+        xz-utils \
+        zlib1g-dev \
+        btrfs-tools \
+        libdevmapper-dev \
+        fakeroot \
+        git-core \
+        python3-pip \
+        && rm -rf /var/lib/apt/lists/* \
+        && apt-get clean
+
+RUN pip3 install virtualenv
+RUN echo 'deb http://ftp.de.debian.org/debian jessie main'
+RUN apt-get update
+RUN apt-get install -y iptables
+RUN echo exit 0 >/usr/sbin/policy-rc.d
+RUN URL='http://downloads.hypriot.com/docker-hypriot_1.9.1-1_armhf.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
+RUN apt-get install -y python3-dev
+RUN pip3 install checkio-cli
+VOLUME /pdata
+ENTRYPOINT checkio-cli
+
+#RUN service docker start
+#FROM resin/rpi-raspbian:jessie
+#RUN wget http://downloads.hypriot.com/docker-hypriot_1.9.1-1_armhf.deb  dpkg -i docker-hypriot_1.9.1–1_armhf.deb
+#RUN systemctl start docker
+#RUN systemctl enable docker
+#RUN usermod -aG docker zurnaz
+#RUN URL='http://ftp.de.debian.org/debian/pool/main/i/iptables/iptables_1.4.21-2+b1_armhf.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
+#RUN \ mkdir -p /src && \ cd /src && \  git clone https://github.com/docker/docker.git

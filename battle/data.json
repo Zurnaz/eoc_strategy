@@ -1,0 +1,24 @@
+{
+  "towers":
+  [
+    {"area_damage_per_shot": 0, "speed": 0, "damage_per_shot": 50, "id": 10, "size": 2, "player_id": 0, "hit_points": 1100, "firing_range": 5, "rate_of_fire": 7, "area_damage_radius": 0, "action": "charge", "role": "tower", "coordinates": [29, 16]},
+    {"area_damage_per_shot": 0, "speed": 0, "damage_per_shot": 25, "id": 11, "size": 2, "player_id": 0, "hit_points": 1100, "firing_range": 5, "rate_of_fire": 10, "area_damage_radius": 0, "action": "charge", "role": "tower", "coordinates": [33, 16]},
+    {"area_damage_per_shot": 0, "speed": 0, "damage_per_shot": 50, "id": 11, "size": 2, "player_id": 0, "hit_points": 1100, "firing_range": 5, "rate_of_fire": 7, "area_damage_radius": 0, "action": "charge", "role": "tower", "coordinates": [25, 16]},
+    {"area_damage_per_shot": 0, "speed": 0, "damage_per_shot": 50, "id": 11, "size": 2, "player_id": 0, "hit_points": 1100, "firing_range": 3, "rate_of_fire": 20, "area_damage_radius": 0, "action": "charge", "role": "tower", "coordinates": [25, 26]}
+  ],
+  "buildings":
+    [
+      {"role": "building", "id": 3, "hit_points": 2000, "size": 3, "coordinates": [30, 16], "action": "idle", "player_id": 0},
+      {"role": "building", "id": 3, "hit_points": 2000, "size": 3, "coordinates": [23, 16], "action": "idle", "player_id": 0}
+    ],
+  "units":
+    [
+      {"speed": 5, "area_damage_radius": 0, "coordinates": [39, 30], "damage_per_shot": 50, "firing_range": 2, "rate_of_fire": 7, "area_damage_per_shot": 0, "action": "move", "hit_points": 100, "player_id": 1, "size": 0, "id": 42, "role": "unit"},
+      {"speed": 5, "area_damage_radius": 0, "coordinates": [38, 20], "damage_per_shot": 50, "firing_range": 2, "rate_of_fire": 7, "area_damage_per_shot": 0, "action": "move", "hit_points": 100, "player_id": 1, "size": 0, "id": 42, "role": "unit"},
+      {"speed": 5, "area_damage_radius": 0, "coordinates": [29, 1], "damage_per_shot": 50, "firing_range": 2, "rate_of_fire": 7, "area_damage_per_shot": 0, "action": "move", "hit_points": 100, "player_id": 1, "size": 0, "id": 42, "role": "unit"}
+    ],
+  "center":
+    [
+      {"role": "center", "id": 3, "hit_points": 2000, "size": 3, "coordinates": [25, 30], "action": "idle", "player_id": 0}
+    ]
+}
